@@ -4,6 +4,7 @@
 * Date: May 4, 2025
 
 Brief Overview:
+
 When snorkeling in the Caribbean and Hawaiian reef ecosystems, I have often found breathtaking views of many unique marine life. Still, I am at a loss when identifying the species I encounter underwater. It is difficult to determine what exactly I am looking at in the reef life ecosystems. I have some ideas, but I am at a loss as a non-expert. Many of the different marine life creatures look similar, which can make it harder for me to identify them correctly. Traditionally, guides and books are used to figure out what you have seen in the water, which can be time-consuming and impractical when discovering a wide variety of marine life creatures in the ecosystem. This makes it especially hard for people snorkeling to figure out what they see underwater. Based on this challenge, there is a growing need for an easier, faster, and more convenient way to identify different marine life species from underwater images. 
 
 To overcome and solve this challenge, I built an image classification model, using deep learning techniques to automatically classify three marine life species in the Caribbean and Hawaiian reef ecosystems they are:
@@ -94,8 +95,11 @@ Once the results for the model were trained, it achieved strong performance in c
     * Data augmentation didn't improve; the new accuracy is 0.81 compared to the original 0.86.
     * The model classified most images correctly, with minor confusion between Green Sea Turtles and Eagle rays and between Stingray and Green Sea Turtles.
     * The **Eagle Ray** marine life class has the strongest performance and the highest F1 score out of the other classes.
+     
 * Performance Metrics:
+  
 **Training Results Overview:**
+
 Evaluation of Training Results of the CNN Model **Before** Data Augmentation  
 ![Before](https://github.com/user-attachments/assets/f25048fe-9fec-42ae-ae6e-a9f71e437a05)
 
@@ -250,18 +254,20 @@ Classification Report Explained
 
 
 **10. Appendices**
+
 A. Technical Modeling Details
 
 **Convolutional Neural Network (CNN) Model Architecture**
 In the convolutional layers, we use Conv2D() for performing the CNN with kernels(filters), padding='same' is used to keep the output size the same as the input, and activation='relu' is used to learn about patterns by using ReLU (Rectified Linear Unit) non-linearity. Then, we also used MaxPooling2D() to downsample a window size 2x2. These are the first steps that allow the CNN model to be created. The number of filters used is from 16 to 128 in the convolutional layers. **Note:** I didn't use filters up to 256 because that can lead to overfitting.
 
 The other layers in the CNN model are
-* Flatten Layer- used to convert the multi-dimensional input data from the output of the convolutional layers to a one-dimensional vector, which is then used by the dense layer
-* The dense layer has 256 neurons that are used to connect the flattening layer to the dense layer, which is then used to extract the combinations used in the beginning (Conv2D() and MaxPooling2D()). I also used activation='relu' again to learn about the relationships.
-* Dropout layer - I added this to help prevent overfitting; it randomly drops 50% of neurons to improve training.
-* Output layer- has three classes (3 neurons based on the labels), which are the three different marine life species. I also included activation='softmax' in the output layer to ensure that each output is between [0, 1] and to help with probabilities. The output layer gives us the predictions for the five classes for the input image.
+* **Flatten Layer**- used to convert the multi-dimensional input data from the output of the convolutional layers to a one-dimensional vector, which is then used by the dense layer
+* The **dense layer** has 256 neurons that are used to connect the flattening layer to the dense layer, which is then used to extract the combinations used in the beginning (Conv2D() and MaxPooling2D()). I also used activation='relu' again to learn about the relationships.
+* **Dropout layer** - I added this to help prevent overfitting; it randomly drops 50% of neurons to improve training.
+* **Output layer**- has three classes (3 neurons based on the labels), which are the three different marine life species. I also included activation='softmax' in the output layer to ensure that each output is between [0, 1] and to help with probabilities. The output layer gives us the predictions for the five classes for the input image.
 
 By creating each of these layers, the neural network can learn from the training data to predict what each image is and the class(label) they align with, making predictions on the marine life images. Overall, CNN learns how to classify the Caribbean and Hawaiian marine life images based on patterns found during training.
 
 **Additional Technical Details**
+
 For more technical details and code, please visit the **GitHub Repository Caribbean and Hawaiian Marine(reef) Life Single-Label Image Classification**. The repository includes a Jupyter notebook that outlines all the code with comments and details on how the model was developed and tested.
