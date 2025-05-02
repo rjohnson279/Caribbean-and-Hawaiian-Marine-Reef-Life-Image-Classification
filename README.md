@@ -1,3 +1,5 @@
+### Caribbean and Hawaiian Marine (Reef) Life Image Classification Write-Up
+
 **1. Executive Summary**
 * Project Title: Caribbean and Hawaiian Marine (Reef) Life Image Classification
 * Name: Ryan T. Johnson
@@ -149,7 +151,9 @@ Based on the images above, we can see that most of the marine life species were 
 * The accuracy is around 83% based on the unseen test dataset, which strongly determines how well the model performed.
 
 **Confusion Matrix Analysis:**
+
 The confusion matrix shows the model's performance and how well it works. 
+
 ![matrix](https://github.com/user-attachments/assets/08f2344c-6696-43d3-8970-54f84d49a831)
 
 Confusion Matrix Explained
@@ -158,6 +162,7 @@ Confusion Matrix Explained
 * **Stingray:** 10 images were correctly classified, and seven were misclassified as Green Sea Turtle. All were confused with Green Sea Turtles.
 
 **Classification Report Analysis:**
+
 The classification report is a summary of how the model performed. The report tells the user how well the model classifies marine life species.
 
 **The Classification Report Metrics:**
